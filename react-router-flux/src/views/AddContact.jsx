@@ -24,7 +24,7 @@ function AddContact() {
 
   return (
     <div className="container my-5">
-      <button onClick={()=> navigate("/")} >Back</button>
+      <button onClick={()=> navigate("/")}>Back</button>
       <h1>Add Task</h1>
       <input className="rounded border p-2" type="text" value={input} onChange={handleInput}
       onFocus={() => setErrorMsg("")}

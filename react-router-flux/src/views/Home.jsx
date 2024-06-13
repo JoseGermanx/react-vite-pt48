@@ -3,7 +3,6 @@ import TaskContext from "../context/TaskContext"
 import { useNavigate } from "react-router-dom"
 import DeleteContact from "./DeleteContact"
 
-
 function Home() {
 
   const {tasks, taskActions} = useContext(TaskContext)
