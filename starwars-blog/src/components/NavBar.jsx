@@ -21,10 +21,17 @@ const NavBar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <span>Favorites{favs.length}</span>
+          <span>Favorites <strong>{favs.length}</strong></span>
         </a>
         <ul className="dropdown-menu">
-          {favs.map((element, index) => {
+          {
+            favs.length === 0 ? (
+              <li>
+                <a className="dropdown-item" href="#">
+                  No favorites yet
+                </a>
+              </li>
+            ) :  favs.map((element, index) => {
             return (
               <li key={index}>
                 <Link className="dropdown-item" to={`/${element.type}/${element.id}`}>
