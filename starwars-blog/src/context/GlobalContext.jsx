@@ -9,20 +9,14 @@ const GlobalReducer = (state, action) => {
   switch (action.type) {
     case "loadData":
         Api.getPeople().then((data) => {
-            data.results.map((element) => {
-                state.push({id: element.uid, name: element.name, type: "people"})
+            state.push({type: "people", data: data.results})
             })
-        });
-        Api.getPlanets().then((data) => {
-            data.results.map((element) => {
-                state.push({id: element.uid, name: element.name, type: "planets"})
-            })
-        });
+        Api.getPlanets().then((data) => 
+            state.push({type: "planets", data: data.results})
+        )
         Api.getVehicles().then((data) => {
-            data.results.map((element) => {
-                state.push({id: element.uid, name: element.name, type: "vehicles"})
-            })
-        });
+            state.push({type: "vehicles", data: data.results})
+        })
         return state;
     case "remove":
         return state.filter(
