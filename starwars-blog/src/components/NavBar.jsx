@@ -8,22 +8,23 @@ const NavBar = () => {
   const { favs } = useContext(FavContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between fixed-top zindex-popover w-100">
+    <nav className="navbar navbar-expand-lg bg-body-se d-flex flex justify-content-between fixed-top zindex-popover w-100">
       <div className="container-md">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="#">
           <img src={starwars} alt="" width="50" className="d-inline-block align-text-top" />
-        </a>
+        </Link>
       </div>
-      <div className="dropdown mx-3">
-        <a
-          className="btn btn-secondary dropdown-toggle"
-          href="#"
+      <div className="dropdown mx-3 btn btn-dark d-flex text-light">
+        <div className="d-flex"><Link className="mx-1 text-light link-underline-none" to={'/favorites'}>Favorites</Link><span className="mx-3"><strong>{favs.length}</strong></span></div>
+        <Link
+          className="dropdown-toggle text-light"
+          to="#"
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <span>Favorites <strong>{favs.length}</strong></span>
-        </a>
+          {/* <span>Favorites <strong>{favs.length}</strong></span> */}
+        </Link>
         <ul className="dropdown-menu">
           {
             favs.length === 0 ? (

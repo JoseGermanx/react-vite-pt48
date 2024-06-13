@@ -22,7 +22,7 @@ const Card = ({ id, name, type }) => {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{type}</p>
-        {type === "people" && (
+        {!type ?   <div className="spinner-border text-secondary" role="status"></div> : type === "people" && (
           <>
           {/* <p className="card-text">{properties.properties.gender}</p> */}
           <p className="card-text">{properties.description}</p>

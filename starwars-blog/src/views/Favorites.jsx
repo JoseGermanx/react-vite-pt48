@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import FavContext from "../context/FavContext"
+import { Link } from "react-router-dom"
 
 // renderizar lista de favoritos
 const Favorites = () => {
@@ -11,7 +12,9 @@ const Favorites = () => {
         {favs.map((element, index) => {
           return (
             <li key={index}>
-              <p>{element.name}</p>
+              <Link className="dropdown-item" to={`/${element.type}/${element.id}`}>
+                  {element.name}
+                </Link>
             </li>
           )
         })}

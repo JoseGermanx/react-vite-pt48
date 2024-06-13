@@ -1,5 +1,4 @@
 
-import NavBar from "../components/NavBar"
 import Api from "../api/api"
 import ListCard from "../components/ListCard"
 
@@ -13,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="">
-        <NavBar />
+    
         <h1 className="text-center mt-5">Star Wars Blog</h1>
         <ListCard apiFetch={getAPlanets} type={"planets"}/>
         <ListCard apiFetch={getPeople} type={"people"}/>
