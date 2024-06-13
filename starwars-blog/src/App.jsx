@@ -12,6 +12,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/:type/:id' element={<Detail/>} />
         <Route path='/favorites' element={<Favorites />} />
+        <Route path='*' element={<h1>Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   )
