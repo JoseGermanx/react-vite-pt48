@@ -1,6 +1,7 @@
-import { Api } from "../api/api"
+
 import ListCard from "../components/ListCard"
 import NavBar from "../components/NavBar"
+import Api from "../api/api"
 
 const Home = () => {
 

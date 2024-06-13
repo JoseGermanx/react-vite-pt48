@@ -3,7 +3,7 @@
 // https://www.swapi.tech/api/people
 // https://www.swapi.tech/api/vehicles
 
-export class Api {
+export default class Api {
     static async getPeople() {
         const response = await fetch('https://www.swapi.tech/api/people');
         const data = await response.json();
