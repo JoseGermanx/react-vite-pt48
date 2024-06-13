@@ -7,7 +7,7 @@ const NavBar = () => {
   const { favs } = useContext(FavContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between fixed-top zindex-popover w-100">
       <div className="container-md">
         <a className="navbar-brand" href="#">
           Star Wars
