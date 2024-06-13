@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import FavContext from "../context/FavContext";
 import { Link } from "react-router-dom";
+import starwars from "../assets/sw.svg";
 const NavBar = () => {
 
   const { favs } = useContext(FavContext);
@@ -10,10 +11,10 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between fixed-top zindex-popover w-100">
       <div className="container-md">
         <a className="navbar-brand" href="#">
-          Star Wars
+          <img src={starwars} alt="" width="50" className="d-inline-block align-text-top" />
         </a>
       </div>
-      <div className="dropdown">
+      <div className="dropdown mx-3">
         <a
           className="btn btn-secondary dropdown-toggle"
           href="#"
