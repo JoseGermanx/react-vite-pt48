@@ -19,5 +19,23 @@ export default class Api {
         const data = await response.json();
         return data;
     }
+
+    static async getPeopleById(id) {
+        const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
+        const data = await response.json();
+        return data;
+    }
+
+    static async getPlanetsById(id) {
+        const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
+        const data = await response.json();
+        return data;
+    }
+
+    static async getVehiclesById(id) {
+        const response = await fetch(`https://www.swapi.tech/api/vehicles/${id}`);
+        const data = await response.json();
+        return data;
+    }
 }
 

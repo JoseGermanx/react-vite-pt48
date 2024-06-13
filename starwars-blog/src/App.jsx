@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './views/Home';
+import Detail from './views/Detail';
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/detail_people/:id' element={<h1>Hola</h1>} />
+        <Route path='/:type/:id' element={<Detail/>} />
       </Routes>
     </BrowserRouter>
   )

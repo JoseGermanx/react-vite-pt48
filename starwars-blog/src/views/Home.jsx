@@ -1,7 +1,9 @@
 
-import ListCard from "../components/ListCard"
 import NavBar from "../components/NavBar"
 import Api from "../api/api"
+import ListCard from "../components/ListCard"
+
+
 
 const Home = () => {
 
@@ -12,9 +14,13 @@ const Home = () => {
   return (
     <div className=" overflow-hidden">
         <NavBar />
-        <ListCard apiFetch={getAPlanets} type={"Planets"}/>
-        <ListCard apiFetch={getPeople} type={"People"}/>
-        <ListCard apiFetch={getVehicles} type={"Vehicles"}/>
+        <h1 className="text-center mt-5">Star Wars Blog</h1>
+  
+        <ListCard apiFetch={getAPlanets} type={"planets"}/>
+
+        <ListCard apiFetch={getPeople} type={"people"}/>
+        <ListCard apiFetch={getVehicles} type={"vehicles"}/>
+       
 
     </div>
   )
