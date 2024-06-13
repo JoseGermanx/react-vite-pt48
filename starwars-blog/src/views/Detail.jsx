@@ -22,7 +22,7 @@ import Api from "../api/api";
 
 const Detail = () => {
   const { id, type } = useParams();
-  const [data, setData] = React.useState({});
+  const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
     if (type === "people") {
@@ -42,7 +42,12 @@ const Detail = () => {
 
   return (
     <div>
-      {type === "people" ? (
+      {
+        data == null ? (
+          <div className="spinner-border text-primary d-flex justify-content-center" role="status">
+        </div>
+        ) :
+      type === "people" ? (
         <div>
           <h1>{data.name}</h1>
           <p>Altura: {data.height}</p>
