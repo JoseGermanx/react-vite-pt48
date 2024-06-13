@@ -13,7 +13,7 @@ const ListCard = ({ apiFetch, type }) => {
 
   return (
    
-    <div className="d-flex flex mt-5 mb-5 justify-content-center">
+    <div className="container d-flex flex-row mx-5 mt-5 mb-5 justify-content-center overflow-auto">
         {data-length === 0 ? (<>
             <div className="spinner-border text-secondary" role="status"></div>
             </>

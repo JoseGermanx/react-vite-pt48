@@ -8,9 +8,9 @@ const NavBar = () => {
   const { favs } = useContext(FavContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-se d-flex flex justify-content-between fixed-top zindex-popover w-100">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between fixed-top zindex-popover w-100">
       <div className="container-md">
-        <Link className="navbar-brand" to="#">
+        <Link className="navbar-brand" to="/">
           <img src={starwars} alt="" width="50" className="d-inline-block align-text-top" />
         </Link>
       </div>

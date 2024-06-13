@@ -17,7 +17,7 @@ const Card = ({ id, name, type }) => {
 
 
   return (
-    <div className="card mx-4" style={{ width: "18rem" }}>
+    <div className="card mx-4 mb-4" style={{ width: "18rem" }}>
       <img src="..." className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>

@@ -11,14 +11,11 @@ const Home = () => {
     const getVehicles = Api.getVehicles()
 
   return (
-    <div className="">
-    
+    <div className="container mx-5">
         <h1 className="text-center mt-5">Star Wars Blog</h1>
         <ListCard apiFetch={getAPlanets} type={"planets"}/>
         <ListCard apiFetch={getPeople} type={"people"}/>
         <ListCard apiFetch={getVehicles} type={"vehicles"}/>
-       
-
     </div>
   )
 }

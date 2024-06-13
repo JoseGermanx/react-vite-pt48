@@ -15,9 +15,6 @@ const FavReducer = (state, action) => {
         return state.filter(
             (element) => element.id !== action.payload.id || element.type !== action.payload.type
         )
-    case "remove-id":
-      state.splice(action.payload, 1);
-      return [...state];
     default:
       return state;
   }
