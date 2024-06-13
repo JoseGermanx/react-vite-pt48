@@ -30,8 +30,8 @@ const Card = ({ id, name, type }) => {
         )
         }
         <div className="d-flex justify-content-between">
-          <Link className="btn btn-primary" to={`/${type}/${id}`}>
-            Ver mas
+          <Link className="btn btn-secondary" to={`/${type}/${id}`}>
+            more...
           </Link>
           {favs.find(
             (element) => element.id === id && element.type === type
