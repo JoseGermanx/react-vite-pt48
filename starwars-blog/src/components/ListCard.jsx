@@ -13,10 +13,10 @@ const ListCard = ({ apiFetch, type }) => {
 
   return (
    
-    <div className="d-flex flex mt-5">
-        {data-length === 0 ? (
-            <div className="spinner-border text-primary d-flex justify-content-center" role="status">
-        </div>
+    <div className="d-flex flex mt-5 mb-5 justify-content-center">
+        {data-length === 0 ? (<>
+            <div className="spinner-border text-secondary" role="status"></div>
+            </>
         ) :
          data.map((elemento, index) => {
           return (
