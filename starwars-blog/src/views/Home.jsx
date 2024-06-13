@@ -1,14 +1,17 @@
 
 import Api from "../api/api"
 import ListCard from "../components/ListCard"
-
+import { useContext } from "react"
+import GlobalContext from "../context/GlobalContext"
 
 
 const Home = () => {
 
-    const getAPlanets = Api.getPlanets()
-    const getPeople = Api.getPeople()
-    const getVehicles = Api.getVehicles()
+    const { global, globalActions} = useContext(GlobalContext)
+
+    // const getAPlanets = Api.getPlanets()
+    // const getPeople = Api.getPeople()
+    // const getVehicles = Api.getVehicles()
 
   return (
     <div className="container mx-5">

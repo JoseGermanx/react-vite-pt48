@@ -9,13 +9,13 @@ const GlobalReducer = (state, action) => {
   switch (action.type) {
     case "loadData":
         Api.getPeople().then((data) => {
-            state.push({type: "people", data: data.results})
+            state.push({people: data.results})
             })
         Api.getPlanets().then((data) => 
-            state.push({type: "planets", data: data.results})
+            state.push({planets: data.results})
         )
         Api.getVehicles().then((data) => {
-            state.push({type: "vehicles", data: data.results})
+            state.push({vehicles: data.results})
         })
         return state;
     case "remove":
