@@ -23,7 +23,6 @@ export function GlobalProvider({ children }) {
   const [global, globalActions] = useReducer(GlobalReducer, []);
   
   useEffect(() => {
-// solo ejecutar una vez y cargar la info si no hay info en el global
     if (!global.people) {
       Api.getPeople().then((data) => {
         globalActions({ type: "loadPeople", payload: data.results });
@@ -39,7 +38,7 @@ export function GlobalProvider({ children }) {
         globalActions({ type: "loadVehicles", payload: data.results });
       });
     }
-  }, []);
+  }, [global.people, global.planets, global.vehicles]);
 
 
   return (

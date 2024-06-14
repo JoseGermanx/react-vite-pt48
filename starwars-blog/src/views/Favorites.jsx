@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const Favorites = () => {
     const { favs } = useContext(FavContext)
   return (
-    <div className="container">
+    <div className="container" style={{marginTop: "110px"}}>
       <h1>Favorites</h1>
       <ul>
         {favs.map((element, index) => {
