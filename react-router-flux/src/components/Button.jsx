@@ -9,7 +9,7 @@ function Button({texto}) {
 const navigate = useNavigate()
 
   return (
-    <button onClick={()=> navigate("/add-contact")}>{texto}</button>
+    <button className="btn btn-primary mx-3" onClick={()=> navigate("/add-contact")}>{texto}</button>
   )
 }
 

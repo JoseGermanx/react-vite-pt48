@@ -6,7 +6,7 @@ function DeleteContact() {
 
     const {taskActions} = useContext(TaskContext)
   return (
-    <button className="btn btn-danger" onClick={() => taskActions({type: 'remove'})}>Delete Task</button>
+    <button className="btn btn-danger" onClick={() => taskActions({type: 'remove'})}>Delete Contact</button>
   )
 }
 

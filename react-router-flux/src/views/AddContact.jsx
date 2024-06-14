@@ -24,8 +24,8 @@ function AddContact() {
 
   return (
     <div className="container my-5">
-      <button onClick={()=> navigate("/")}>Back</button>
-      <h1>Add Task</h1>
+      <button className="btn btn-secondary" onClick={()=> navigate("/")}>Back</button>
+      <h1 className="mt-3">Add Contact</h1>
       <input className="rounded border p-2" type="text" value={input} onChange={handleInput}
       onFocus={() => setErrorMsg("")}
       
@@ -33,7 +33,7 @@ function AddContact() {
       <br />
       <span className="text-danger">{errorMsg}</span>
       <br />
-      <button className="btn btn-success my-3" onClick={() => addTask()}>Add Task</button>
+      <button className="btn btn-success my-3" onClick={() => addTask()}>Add Contact</button>
     </div>
   );
 }

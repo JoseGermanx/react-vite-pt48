@@ -31,16 +31,17 @@ const UpdateContact = () => {
     }, [id, tasks]);
     
     return (
-        <div>
-        <h1>Actualizar tarea</h1>
+        <div className="container mt-5">
+        <h1>Update Contact</h1>
         <form onSubmit={handleSubmit}>
             <input
             type="text"
             value={task}
             onChange={handleChange}
             placeholder="Actualizar tarea"
+            className="rounded border p-2"
             />
-            <button type="submit">Actualizar</button>
+            <button className="btn btn-success mx-2" type="submit">Actualizar</button>
         </form>
         </div>
     );
