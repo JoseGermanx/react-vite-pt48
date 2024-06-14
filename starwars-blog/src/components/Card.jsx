@@ -9,7 +9,6 @@ import GlobalContext from "../context/GlobalContext";
 const Card = ({ id, name, type }) => {
   const { favs, FavActions } = useContext(FavContext);
   const [properties, setProperties] = useState({})
-  const { global } = useContext(GlobalContext);
 
   useEffect(() => {
     if (type === "people") {
