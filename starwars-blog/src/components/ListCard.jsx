@@ -9,8 +9,10 @@ const ListCard = ({ apiFetch, type }) => {
           <div className="spinner-border text-secondary" role="status"></div>
         </div>
       ) : (
+        <>
+        <h1 className="text-center">{type}</h1>
         <div
-          className="container d-flex flex-row mt-5 mb-2 justify-content-start overflow-auto"
+          className="container d-flex flex-row mt-3 mb-2 justify-content-start overflow-auto"
           style={{
             overflow: " scroll",
             scrollbarColor: "grey black",
@@ -26,6 +28,7 @@ const ListCard = ({ apiFetch, type }) => {
               );
             })}
         </div>
+        </>
       )}
     </>
   );
