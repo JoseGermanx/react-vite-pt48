@@ -5,15 +5,14 @@ import Card from "./Card";
 const ListCard = ({ apiFetch, type }) => {
   const [data, setData] = useState([]);
 
-  console.log(apiFetch);
 
-  useEffect(() => {
-    setData(apiFetch);
-  }, [apiFetch]);
+  // useEffect(() => {
+  //   setData(apiFetch);
+  // }, [type]);
 
   return (
     <>
-      {!data ? (
+      {!apiFetch ? (
         <div className="container d-flex flex-row mt-5 mb-2 justify-content-center">
           <div className="spinner-border text-secondary" role="status"></div>
         </div>
@@ -26,8 +25,8 @@ const ListCard = ({ apiFetch, type }) => {
             scrollbarWidth: "thin",
           }}
         >
-          {data &&
-            data.map((elemento, index) => {
+          {apiFetch &&
+            apiFetch.map((elemento, index) => {
               return (
                 <div key={index}>
                   <Card id={elemento.uid} name={elemento.name} type={type} />

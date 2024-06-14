@@ -38,7 +38,7 @@ export function GlobalProvider({ children }) {
         globalActions({ type: "loadVehicles", payload: data.results });
       });
     }
-  }, [global.people, global.planets, global.vehicles]);
+  }, []);
 
 
   return (
