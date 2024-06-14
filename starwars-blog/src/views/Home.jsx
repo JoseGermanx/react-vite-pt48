@@ -1,15 +1,10 @@
 import ListCard from "../components/ListCard";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import GlobalContext from "../context/GlobalContext";
 import starwars from "../assets/sw.svg";
 
 const Home = () => {
-  const { global, globalActions } = useContext(GlobalContext);
-
-  useEffect(() => {
-    globalActions({ type: "loadPeople" });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { global } = useContext(GlobalContext);
 
   return (
     <div className="container" style={{ marginTop: "70px" }}>
