@@ -15,7 +15,7 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="dropdown mx-3 btn btn-dark d-flex text-light">
-        <div className="d-flex"><Link className="mx-1 text-light link-underline-none underline" to={'/favorites'}>Favorites</Link><span className="mx-3"><strong>{favs.length}</strong></span></div>
+        <div className="d-flex"><Link className="mx-1 text-light link-underline-none underline" to={'/favorites'}>Favorites</Link><span className="mx-3"><strong className="yellowcolor">{favs.length}</strong></span></div>
         <Link
           className="dropdown-toggle text-light"
           to="#"

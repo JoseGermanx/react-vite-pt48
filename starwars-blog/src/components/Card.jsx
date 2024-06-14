@@ -28,7 +28,7 @@ const Card = ({ id, name, type }) => {
 
 
   return (
-    <div className="card mx-1 mb-4 h-100" style={{ width: "12rem" }}>
+    <div className="card mx-1 mb-4 h-100 bg-dark text-light" style={{ width: "12rem" }}>
       <img src="https://placehold.co/600x400" className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
@@ -54,7 +54,7 @@ const Card = ({ id, name, type }) => {
               }
               className="btn"
             >
-              <i className="fa-solid fa-heart"></i>
+              <i className="yellowcolor fa-solid fa-heart"></i>
             </button>
           ) : (
             <button
@@ -63,7 +63,7 @@ const Card = ({ id, name, type }) => {
               }
               className="btn"
             >
-              <i className="fa-regular fa-heart"></i>
+              <i className="yellowcolor fa-regular fa-heart"></i>
             </button>
           )}
         </div>
