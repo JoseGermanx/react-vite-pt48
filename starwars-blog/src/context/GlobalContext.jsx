@@ -3,9 +3,8 @@ import Api from "../api/api";
 
 const GlobalContext = createContext(null);
 
-// patron flux
+
 const GlobalReducer = (state, action) => {
-  // Dependiendo del type de la acción realiza una tarea distinta
   switch (action.type) {
     case "loadPeople":
         return {...state, people: action.payload};
