@@ -2,10 +2,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Api from "../api/api";
+import GlobalContext from "../context/GlobalContext";
 
 const Detail = () => {
   const { id, type } = useParams();
   const [data, setData] = React.useState(null);
+
+  const { favs } = React.useContext(GlobalContext);
 
   React.useEffect(() => {
     if (type === "people") {
@@ -33,7 +36,16 @@ const Detail = () => {
       type === "people" ? (
         <div>
           <h3>{type}</h3>
-          <h1>{data.name}</h1>
+          <div><h1>{data.name}</h1>
+          {favs.find(
+            (element) => element.id === id && element.type === type
+          )  && (
+            <button
+              className="btn"
+            >
+              <i className="yellowcolor fa-solid fa-heart"></i>
+            </button>
+          )}</div>
           <p>Altura: {data.height}</p>
           <p>Peso: {data.mass}</p>
           <p>Color de cabello: {data.hair_color}</p>

@@ -8,23 +8,6 @@ import GlobalContext from "../context/GlobalContext";
 
 const Card = ({ id, name, type }) => {
   const { favs, FavActions } = useContext(FavContext);
-  // const [properties, setProperties] = useState({})
-
-  // useEffect(() => {
-  //   if (type === "people") {
-  //     Api.getPeopleById(id).then((data) => {
-  //       setProperties(data.results);
-  //     });
-  //   } else if (type === "planets") {
-  //     Api.getPlanetsById(id).then((data) => {
-  //       setProperties(data.results);
-  //     });
-  //   } else if (type === "vehicles") {
-  //     Api.getVehiclesById(id).then((data) => {
-  //       setProperties(data.results);
-  //     });
-  //   }
-  // }, [])
 
 
   return (
@@ -33,14 +16,6 @@ const Card = ({ id, name, type }) => {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{type}</p>
-        {
-        // type === "people" && (
-        //   <>
-        //   {/* <p className="card-text">{properties.gender}</p> */}
-        //   {/* <p className="card-text">{properties.description}</p> */}
-        //   </>
-        // )
-        }
         <div className="d-flex justify-content-between">
           <Link className="btn btn-secondary yellowcolor" to={`/${type}/${id}`}>
             more
