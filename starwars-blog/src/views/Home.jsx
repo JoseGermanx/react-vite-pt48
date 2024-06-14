@@ -8,6 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     globalActions({ type: "loadPeople" });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
