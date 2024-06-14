@@ -28,8 +28,8 @@ const Card = ({ id, name, type }) => {
 
 
   return (
-    <div className="card mx-1 mb-4" style={{ width: "12rem" }}>
-      <img src="..." className="card-img-top" alt="..." />
+    <div className="card mx-1 mb-4 h-100" style={{ width: "12rem" }}>
+      <img src="https://placehold.co/600x400" className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{type}</p>

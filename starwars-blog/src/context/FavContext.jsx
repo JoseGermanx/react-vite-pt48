@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const FavContext = createContext(null);
 
@@ -10,11 +10,17 @@ const FavReducer = (state, action) => {
       if (state.find((element) => element.id === action.payload.id && element.type === action.payload.type)) {
         return [...state];
       }
+      localStorage.setItem("favs", JSON.stringify([...state, action.payload]));
       return [...state, action.payload];
     case "remove":
+        localStorage.setItem("favs", JSON.stringify(state.filter(
+            (element) => element.id !== action.payload.id || element.type !== action.payload.type
+        )));
         return state.filter(
             (element) => element.id !== action.payload.id || element.type !== action.payload.type
         )
+    case "load":
+        return action.payload;
     default:
       return state;
   }
@@ -23,6 +29,15 @@ const FavReducer = (state, action) => {
 // eslint-disable-next-line react/prop-types
 export function FavProvider({ children }) {
   const [favs, FavActions] = useReducer(FavReducer, []);
+
+  useEffect(() => {
+    const data = localStorage.getItem("favs");
+    if (data) {
+      FavActions({ type: "load", payload: JSON.parse(data) });
+    }
+  },[]);
+
+
   return (
     <FavContext.Provider value={{ favs, FavActions }}>
       {children}
