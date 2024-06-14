@@ -5,6 +5,7 @@ import Detail from './views/Detail';
 import Favorites from './views/Favorites';
 import NavBar from './components/NavBar';
 import NotFound from './views/404';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/favorites' element={<Favorites />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
