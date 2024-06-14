@@ -9,3 +9,23 @@ body {
 h1 {
   color: yellow
 }
+
+.underline {
+  text-decoration:none;
+}
+
+/* .bgcolor {
+  background-color: yellow;
+}
+
+.bgcolor:hover {
+  background-color: rgb(247, 239, 127);
+}
+
+.textcolor {
+  color: black;
+}
+
+.textcolor:hover {
+  color: black;
+} */
