@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import starwars from "../assets/sw.svg";
 const NavBar = () => {
 
-  const { favs } = useContext(FavContext);
+  const { favs, FavActions  } = useContext(FavContext);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary d-flex flex justify-content-between fixed-top zindex-popover w-100">
@@ -35,10 +35,18 @@ const NavBar = () => {
               </li>
             ) :  favs.map((element, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="d-flex flex" style={{fontSize: "12px"}}>
                 <Link className="dropdown-item" to={`/${element.type}/${element.id}`}>
                   {element.name}
                 </Link>
+                <button
+              onClick={() =>
+                FavActions({ type: "remove", payload: { id: element.id, name: element.name, type: element.type } })
+              }
+              className="btn"
+            >
+              <i className="fa-solid fa-trash" style={{fontSize: "12px"}}></i>
+            </button>
 
               </li>
             );
