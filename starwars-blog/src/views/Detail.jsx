@@ -1,21 +1,4 @@
-/* componente para la vista de detalle de un personaje */
-/* props 
-"properties": {
-      "height": "172",
-      "mass": "77",
-      "hair_color": "blond",
-      "skin_color": "fair",
-      "eye_color": "blue",
-      "birth_year": "19BBY",
-      "gender": "male",
-      "created": "2024-06-12T17:38:22.652Z",
-      "edited": "2024-06-12T17:38:22.652Z",
-      "name": "Luke Skywalker",
-      "homeworld": "https://www.swapi.tech/api/planets/1",
-      "url": "https://www.swapi.tech/api/data/1"
-    },
-    "description": "A person within the Star Wars universe",
-    */
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import Api from "../api/api";
