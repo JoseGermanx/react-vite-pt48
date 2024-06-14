@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-2" style={{marginTop: "110px"}}>
+    <div className="container" style={{marginTop: "110px"}}>
       <h1 className="text-center mt-5">Star Wars Blog</h1>
       <ListCard apiFetch={global.planets} type={"planets"} />
       <ListCard apiFetch={global.people} type={"people"} />

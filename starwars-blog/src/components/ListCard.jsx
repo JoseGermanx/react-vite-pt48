@@ -5,30 +5,38 @@ import Card from "./Card";
 const ListCard = ({ apiFetch, type }) => {
   const [data, setData] = useState([]);
 
-  console .log(apiFetch)
+  console.log(apiFetch);
 
-    useEffect(() => {
-        setData(apiFetch)
-    }, [apiFetch])
+  useEffect(() => {
+    setData(apiFetch);
+  }, [apiFetch]);
 
   return (
-   
-    <div className="container d-flex flex-row mt-5 mb-2 justify-content-start overflow-auto">
-        {data && data.length === 0 ? (<>
-            <div className="spinner-border text-secondary" role="status"></div>
-            </>
-        ) :
-        data && data.map((elemento, index) => {
-          return (
-            <div key={index}>
-              
-              <Card id={elemento.uid} name={elemento.name} type={type} />
-     
-            </div>
-          );
-        })}
-     
-    </div>
+    <>
+      {!data ? (
+        <div className="container d-flex flex-row mt-5 mb-2 justify-content-center">
+          <div className="spinner-border text-secondary" role="status"></div>
+        </div>
+      ) : (
+        <div
+          className="container d-flex flex-row mt-5 mb-2 justify-content-start overflow-auto"
+          style={{
+            overflow: " scroll",
+            scrollbarColor: "grey black",
+            scrollbarWidth: "thin",
+          }}
+        >
+          {data &&
+            data.map((elemento, index) => {
+              return (
+                <div key={index}>
+                  <Card id={elemento.uid} name={elemento.name} type={type} />
+                </div>
+              );
+            })}
+        </div>
+      )}
+    </>
   );
 };
 
