@@ -49,6 +49,7 @@ const Detail = () => {
         ) :
       type === "people" ? (
         <div>
+          <h3>{type}</h3>
           <h1>{data.name}</h1>
           <p>Altura: {data.height}</p>
           <p>Peso: {data.mass}</p>
@@ -56,6 +57,7 @@ const Detail = () => {
         </div>
       ) : type === "planets" ? (
         <div>
+           <h3>{type}</h3>
           <h1>{data.name}</h1>
           <p>Diámetro: {data.diameter}</p>
           <p>Clima: {data.climate}</p>
@@ -63,6 +65,7 @@ const Detail = () => {
         </div>
       ) : type === "vehicles" ? (
         <div>
+           <h3>{type}</h3>
           <h1>{data.name}</h1>
           <p>Modelo: {data.model}</p>
           <p>Fabricante: {data.manufacturer}</p>
