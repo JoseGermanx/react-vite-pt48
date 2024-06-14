@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import Api from "../api/api";
 
 const GlobalContext = createContext(null);
@@ -8,19 +8,11 @@ const GlobalReducer = (state, action) => {
   // Dependiendo del type de la acción realiza una tarea distinta
   switch (action.type) {
     case "loadPeople":
-        // esta mutando
-        Api.getPeople().then((data) => state.push({people: data.results}))
-        return state;
+        return {...state, people: action.payload};
     case "loadPlanets":
-        Api.getPlanets().then((data) => state.push({planets: data.results}))
-        return state;
+        return {...state, planets: action.payload};
     case "loadVehicles":
-        Api.getVehicles().then((data) => state.push({vehicles: data.results}))
-        return state;
-    case "remove":
-        return state.filter(
-            (element) => element.id !== action.payload.id || element.type !== action.payload.type
-        )
+        return {...state, vehicles: action.payload};
     default:
       return state;
   }
@@ -29,6 +21,27 @@ const GlobalReducer = (state, action) => {
 // eslint-disable-next-line react/prop-types
 export function GlobalProvider({ children }) {
   const [global, globalActions] = useReducer(GlobalReducer, []);
+  
+  useEffect(() => {
+// solo ejecutar una vez y cargar la info si no hay info en el global
+    if (!global.people) {
+      Api.getPeople().then((data) => {
+        globalActions({ type: "loadPeople", payload: data.results });
+      });
+    }
+    if (!global.planets) {
+      Api.getPlanets().then((data) => {
+        globalActions({ type: "loadPlanets", payload: data.results });
+      });
+    }
+    if (!global.vehicles) {
+      Api.getVehicles().then((data) => {
+        globalActions({ type: "loadVehicles", payload: data.results });
+      });
+    }
+  }, []);
+
+
   return (
     <GlobalContext.Provider value={{ global, globalActions }}>
       {children}

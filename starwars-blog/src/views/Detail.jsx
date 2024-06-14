@@ -18,27 +18,23 @@
     */
 import React from "react";
 import { useParams } from "react-router-dom";
-import Api from "../api/api";
+import GlobalContext from "../context/GlobalContext";
 
 const Detail = () => {
   const { id, type } = useParams();
   const [data, setData] = React.useState(null);
 
+  const { global } = React.useContext(GlobalContext);
+
   React.useEffect(() => {
     if (type === "people") {
-      Api.getPeopleById(id).then((data) => {
-        setData(data.result.properties);
-      });
+      setData(global.people.find((element) => element.uid === id));
     } else if (type === "planets") {
-      Api.getPlanetsById(id).then((data) => {
-        setData(data.result.properties);
-      });
+      setData(global.planets.find((element) => element.uid === id));
     } else if (type === "vehicles") {
-      Api.getVehiclesById(id).then((data) => {
-        setData(data.result.properties);
-      });
+      setData(global.vehicles.find((element) => element.uid === id));
     }
-  }, [id, type]);
+  }, [global.people, global.planets, global.vehicles, id, type]);
 
   return (
     <div>
