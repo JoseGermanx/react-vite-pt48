@@ -12,14 +12,20 @@ const Card = ({ id, name, type }) => {
   const { global } = useContext(GlobalContext);
 
   useEffect(() => {
-    if (type === "people" && global.people.length !== 0) {
-     setProperties(global.people.find((element) => element.uid === id));
-    } else if (type === "planets" && global.people.length !== 0) {
-      setProperties(global.planets.find((element) => element.uid === id));
-    } else if (type === "vehicles" && global.people.length !== 0) {
-      setProperties(global.vehicles.find((element) => element.uid === id));
+    if (type === "people") {
+      Api.getPeopleById(id).then((data) => {
+        setProperties(data);
+      });
+    } else if (type === "planets") {
+      Api.getPlanetsById(id).then((data) => {
+        setProperties(data);
+      });
+    } else if (type === "vehicles") {
+      Api.getVehiclesById(id).then((data) => {
+        setProperties(data);
+      });
     }
-  }, [global.people, global.planets, global.vehicles, id, type])
+  }, [id, type])
 
 
   return (
@@ -28,7 +34,7 @@ const Card = ({ id, name, type }) => {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{type}</p>
-        {!type ? <div className="spinner-border text-secondary" role="status"></div> : type === "people" && (
+        {!type ?   <div className="spinner-border text-secondary" role="status"></div> : type === "people" && (
           <>
           {/* <p className="card-text">{properties.properties.gender}</p> */}
           <p className="card-text">{properties.description}</p>
@@ -39,7 +45,7 @@ const Card = ({ id, name, type }) => {
           <Link className="btn btn-secondary" to={`/${type}/${id}`}>
             more...
           </Link>
-          {favs && favs.find(
+          {favs.find(
             (element) => element.id === id && element.type === type
           ) ? (
             <button
