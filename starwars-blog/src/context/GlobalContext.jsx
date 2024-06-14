@@ -7,16 +7,15 @@ const GlobalContext = createContext(null);
 const GlobalReducer = (state, action) => {
   // Dependiendo del type de la acción realiza una tarea distinta
   switch (action.type) {
-    case "loadData":
-        Api.getPeople().then((data) => {
-            state.push({people: data.results})
-            })
-        Api.getPlanets().then((data) => 
-            state.push({planets: data.results})
-        )
-        Api.getVehicles().then((data) => {
-            state.push({vehicles: data.results})
-        })
+    case "loadPeople":
+        // esta mutando
+        Api.getPeople().then((data) => state.push({people: data.results}))
+        return state;
+    case "loadPlanets":
+        Api.getPlanets().then((data) => state.push({planets: data.results}))
+        return state;
+    case "loadVehicles":
+        Api.getVehicles().then((data) => state.push({vehicles: data.results}))
         return state;
     case "remove":
         return state.filter(

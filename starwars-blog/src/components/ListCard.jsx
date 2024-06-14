@@ -5,20 +5,20 @@ import Card from "./Card";
 const ListCard = ({ apiFetch, type }) => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    apiFetch.then((data) => {
-      setData(data.results);
-    });
-  }, [apiFetch]);
+  console .log(apiFetch)
+
+    useEffect(() => {
+        setData(apiFetch)
+    }, [apiFetch])
 
   return (
    
     <div className="container d-flex flex-row mt-5 mb-2 justify-content-start overflow-auto">
-        {data-length === 0 ? (<>
+        {data && data.length === 0 ? (<>
             <div className="spinner-border text-secondary" role="status"></div>
             </>
         ) :
-         data.map((elemento, index) => {
+        data && data.map((elemento, index) => {
           return (
             <div key={index}>
               
