@@ -11,9 +11,9 @@ const Favorites = () => {
       <ul>
         {favs.map((element, index) => {
           return (
-            <li key={index}>
-              <Link className="dropdown-item" to={`/${element.type}/${element.id}`}>
-                  {element.name}
+            <li key={index} className="list-group">
+              <Link className="list-group-item list-group-item-action list-group-item-dark mt-2" to={`/${element.type}/${element.id}`}>
+                  {`${element.name} - Type: ${element.type}`} 
                 </Link>
             </li>
           )
