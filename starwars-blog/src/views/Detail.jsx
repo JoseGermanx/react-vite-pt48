@@ -2,13 +2,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Api from "../api/api";
-import GlobalContext from "../context/GlobalContext";
+import FavContext from "../context/FavContext";
 
 const Detail = () => {
   const { id, type } = useParams();
   const [data, setData] = React.useState(null);
 
-  const { favs } = React.useContext(GlobalContext);
+  const { favs } = React.useContext(FavContext);
 
   React.useEffect(() => {
     if (type === "people") {
@@ -36,14 +36,14 @@ const Detail = () => {
       type === "people" ? (
         <div>
           <h3>{type}</h3>
-          <div><h1>{data.name}</h1>
+          <div className="d-flex"><h1>{data.name}</h1>
           {favs.find(
             (element) => element.id === id && element.type === type
           )  && (
             <button
               className="btn"
             >
-              <i className="yellowcolor fa-solid fa-heart"></i>
+              <i className="yellowcolor fa-solid fa-heart mx-1"></i>
             </button>
           )}</div>
           <p>Altura: {data.height}</p>
@@ -53,7 +53,16 @@ const Detail = () => {
       ) : type === "planets" ? (
         <div>
            <h3>{type}</h3>
-          <h1>{data.name}</h1>
+           <div className="d-flex"><h1>{data.name}</h1>
+          {favs.find(
+            (element) => element.id === id && element.type === type
+          )  && (
+            <button
+              className="btn"
+            >
+              <i className="yellowcolor fa-solid fa-heart mx-1"></i>
+            </button>
+          )}</div>
           <p>Diámetro: {data.diameter}</p>
           <p>Clima: {data.climate}</p>
           <p>Terreno: {data.terrain}</p>
@@ -61,7 +70,16 @@ const Detail = () => {
       ) : type === "vehicles" ? (
         <div>
            <h3>{type}</h3>
-          <h1>{data.name}</h1>
+           <div className="d-flex"><h1>{data.name}</h1>
+          {favs.find(
+            (element) => element.id === id && element.type === type
+          )  && (
+            <button
+              className="btn"
+            >
+              <i className="yellowcolor fa-solid fa-heart mx-1"></i>
+            </button>
+          )}</div>
           <p>Modelo: {data.model}</p>
           <p>Fabricante: {data.manufacturer}</p>
           <p>Costo en créditos: {data.cost_in_credits}</p>
