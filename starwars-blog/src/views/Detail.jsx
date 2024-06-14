@@ -44,7 +44,7 @@ const Detail = () => {
     <div className="container bg-dark p-5" style={{marginTop: "110px"}}>
       {
         data == null ? (
-          <div className="spinner-border text-primary d-flex justify-content-center" role="status">
+          <div className="spinner-border text-secondary d-flex justify-content-center" role="status">
         </div>
         ) :
       type === "people" ? (
