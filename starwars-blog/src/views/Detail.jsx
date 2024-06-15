@@ -27,7 +27,7 @@ const Detail = () => {
   }, [id, type]);
 
   return (
-    <div className="container bg-dark p-5" style={{marginTop: "110px"}}>
+    <div className="container bg-dark p-5 h-100" style={{marginTop: "110px"}}>
       {
         data == null ? (
           <div className="spinner-border text-secondary d-flex justify-content-center" role="status">

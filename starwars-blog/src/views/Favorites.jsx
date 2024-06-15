@@ -9,7 +9,7 @@ const Favorites = () => {
     <div className="container bg-dark p-5" style={{marginTop: "110px"}}>
       <h1>Favorites</h1>
       <ul>
-        {favs.map((element, index) => {
+        {favs.length === 0 ? <h6>Not favorites yet</h6> : favs.map((element, index) => {
           return (
             <li key={index} className="list-group">
               <Link className="list-group-item list-group-item-action list-group-item-dark mt-2" to={`/${element.type}/${element.id}`}>
