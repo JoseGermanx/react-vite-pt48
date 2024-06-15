@@ -3,6 +3,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Api from "../api/api";
 import FavContext from "../context/FavContext";
+import starwars from "../assets/sw.svg";
+
 
 const Detail = () => {
   const { id, type } = useParams();
@@ -28,6 +30,14 @@ const Detail = () => {
 
   return (
     <div className="container bg-dark p-5 h-100" style={{marginTop: "110px"}}>
+      <div className="container d-flex justify-content-center">
+        <img
+          src={starwars}
+          alt=""
+          width="200"
+          className="align-text-top"
+        />
+      </div>
       {
         data == null ? (
           <div className="spinner-border text-secondary d-flex justify-content-center" role="status">
