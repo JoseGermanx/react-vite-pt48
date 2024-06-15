@@ -11,7 +11,7 @@ const Card = ({ id, name, type }) => {
 
 
   return (
-    <div className="card mx-1 mb-4 h-100 bg-dark text-light" style={{ width: "12rem" }}>
+    <div className="card mx-1 mb-4 h-100 bg-dark text-light" style={{ width: "18rem" }}>
       <img src="https://placehold.co/600x400" className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>

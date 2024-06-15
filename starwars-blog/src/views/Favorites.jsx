@@ -8,7 +8,7 @@ import starwars from "../assets/sw.svg";
 const Favorites = () => {
     const { favs } = useContext(FavContext)
   return (
-    <div className="container bg-dark p-5" style={{marginTop: "110px"}}>
+    <div className="container bg-dark p-5 rounded" style={{marginTop: "110px"}}>
       <div className="container d-flex justify-content-center">
         <img
           src={starwars}

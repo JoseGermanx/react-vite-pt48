@@ -29,7 +29,7 @@ const Detail = () => {
   }, [id, type]);
 
   return (
-    <div className="container bg-dark p-5 h-100" style={{marginTop: "110px"}}>
+    <div className="container bg-dark p-5 h-100 rounded" style={{marginTop: "110px"}}>
       <div className="container d-flex justify-content-center">
         <img
           src={starwars}
